@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Chau Nhat Long — Unity / Game Developer portfolio and CV">
+<title>Chau Nhat Long — Unity Game Developer</title>
+<style>
+:root{
+  --bg:#080b12; --panel:#0e131d; --panel2:#111827; --text:#e7edf7;
+  --muted:#8e9bb0; --line:#202a3a; --accent:#6ee7ff; --accent2:#9b8cff;
+  --green:#77f2a8; --max:1120px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 5%,#17233d 0,transparent 30%),var(--bg);
+color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px}
+a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(8,11,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.04em}.logo span{color:var(--accent)}
+.links{display:flex;gap:25px;color:var(--muted);font-size:14px}.links a:hover{color:var(--text)}
+.hero{min-height:690px;display:grid;align-items:center;padding:90px 0 70px;position:relative}
+.terminal{color:var(--green);font:13px ui-monospace,SFMono-Regular,Menlo,monospace;margin-bottom:18px}
+.hero h1{font-size:clamp(48px,8vw,92px);line-height:.98;letter-spacing:-.06em;margin:0 0 24px;max-width:900px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:720px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-weight:700}.btn.primary{background:var(--text);color:#090c13;border-color:var(--text)}.btn:hover{transform:translateY(-1px)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:40px;color:var(--muted);font-size:14px}.meta b{color:var(--text)}
+section{padding:92px 0;border-top:1px solid var(--line)}.eyebrow{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.15em;text-transform:uppercase}
+h2{font-size:42px;letter-spacing:-.04em;margin:8px 0 38px}
+.about{display:grid;grid-template-columns:1.4fr .8fr;gap:50px}.about p{color:#bac4d4;font-size:17px}
+.strengths{display:grid;gap:12px}.strength{padding:18px;border:1px solid var(--line);background:rgba(14,19,29,.7);border-radius:12px}.strength b{display:block}.strength span{font-size:13px;color:var(--muted)}
+.timeline{position:relative;margin-left:8px}.job{display:grid;grid-template-columns:170px 1fr;gap:35px;padding:0 0 52px;position:relative}.job:before{content:"";position:absolute;left:-8px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}.job:after{content:"";position:absolute;left:-5px;top:17px;bottom:0;width:1px;background:var(--line)}.job:last-child:after{display:none}.date{color:var(--muted);font:13px ui-monospace,SFMono-Regular,Menlo,monospace;padding-left:18px}.job h3{margin:0;font-size:24px}.company{color:var(--accent);font-weight:700}.job p,.job li{color:var(--muted)}ul{padding-left:20px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(17,24,39,.95),rgba(11,15,24,.95));padding:25px;min-height:190px;transition:.2s}.project:hover{border-color:#40506c;transform:translateY(-3px)}.project .num{font:12px ui-monospace;color:var(--accent);float:right}.project h3{margin:0 0 7px;font-size:21px}.project p{color:var(--muted);font-size:14px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font:11px ui-monospace;color:#b9c7dc;border:1px solid #28344a;padding:4px 8px;border-radius:999px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--panel)}.skill h3{font-size:14px;margin:0 0 10px}.skill p{margin:0;color:var(--muted);font-size:14px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{border:1px solid var(--line);background:var(--panel);padding:25px;border-radius:14px}.contact-card small{display:block;color:var(--muted);font:11px ui-monospace;margin-bottom:5px}.contact-card a{font-weight:700}
+footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+@media(max-width:760px){.links{display:none}.hero{min-height:auto;padding-top:75px}.about,.contact{grid-template-columns:1fr}.grid,.skills{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:8px}.date{padding-left:18px}h2{font-size:34px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav">
+  <a class="logo" href="#">CN<span>.</span>L</a>
+  <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="terminal">&gt; booting unity_developer_profile.exe<span class="blink">_</span></div>
+  <h1>Chau Nhat Long<br><em>Unity Game Developer</em></h1>
+  <p>Game developer with experience across puzzle games, RPG, strategy, live-service features, WebGL and desktop porting. Focused on building and maintaining game systems with Unity and C#.</p>
+  <div class="cta"><a class="btn primary" href="#projects">View projects →</a><a class="btn" href="Chau-Nhat-Long-CV.pdf" download>Download CV</a></div>
+  <div class="meta"><span>📍 <b>Danang, Vietnam</b></span><span>🎮 <b>Game Development</b></span><span>⚙ <b>Unity / C#</b></span></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="eyebrow">// profile</div><h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I graduated from Danang University of Technology in June 2017 with a major in Software Engineering. My career started at Asian Tech, where I learned game programming and Unity while working on small projects and outsourced projects.</p>
+      <p>I then joined a startup focused on puzzle games, where I grew from developer into a role that included team management, feature development, visual effects, data analysis and game marketing. Since 2020, I have worked at Gear Games across in-house and outsourced projects, contributing as a developer and senior developer.</p>
+      <p>My strongest motivation is continuous learning: exploring new technology, improving game systems and working effectively with a team.</p>
+    </div>
+    <div class="strengths">
+      <div class="strength"><b>Creativity</b><span>Explore, experiment and develop every day.</span></div>
+      <div class="strength"><b>Committed</b><span>High self-discipline and responsibility at work.</span></div>
+      <div class="strength"><b>Teamwork</b><span>Experience collaborating with teams and managing a development team.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="eyebrow">// career.log</div><h2>Experience</h2>
+  <div class="timeline">
+    <article class="job"><div class="date">2020 — PRESENT</div><div><h3>Senior Game Developer · <span class="company">Gear Games</span></h3><ul><li>Joined as a senior developer.</li><li>Worked across in-house and outsourced projects.</li><li>Developed and maintained gameplay and live features.</li><li>Contributed to platform porting including WebGL and Windows/Mac/Steam.</li></ul></div></article>
+    <article class="job"><div class="date">2018 — 2020</div><div><h3>Game Developer / Team Manager · <span class="company">Game-Tamin</span></h3><ul><li>Worked in a startup focused on puzzle games.</li><li>Developed features and visual effects.</li><li>Progressed from developer to managing and developing the team.</li><li>Worked on data analysis and game marketing.</li></ul></div></article>
+    <article class="job"><div class="date">2016 — 2018</div><div><h3>Fresher Game Developer · <span class="company">Asian Tech</span></h3><ul><li>Started with game programming and Unity research.</li><li>Worked on small projects, bug fixing and outsourced projects.</li></ul></div></article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="eyebrow">// shipped_and_supported</div><h2>Selected projects</h2>
+  <div class="grid">
+    <article class="project"><span class="num">01</span><h3>Marvel Snap</h3><p>Developer working on features related to the Shop and WebShop.</p><div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Live Service</span><span class="tag">Shop</span></div></article>
+    <article class="project"><span class="num">02</span><h3>Marvel Strike Force</h3><p>Developer responsible for porting the game to WebGL.</p><div class="tags"><span class="tag">Unity</span><span class="tag">WebGL</span><span class="tag">Porting</span></div></article>
+    <article class="project"><span class="num">03</span><h3>XCOM LEGENDS</h3><p>Outsourced project for 2K Games. Worked as a developer maintaining features.</p><div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Maintenance</span></div></article>
+    <article class="project"><span class="num">04</span><h3>Arcane Rush</h3><p>Ported the game to Windows, Mac and Steam.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Steam</span><span class="tag">Desktop</span></div></article>
+    <article class="project"><span class="num">05</span><h3>Puzzle Strike: Combat RPG</h3><p>Developed and maintained game features.</p><div class="tags"><span class="tag">Puzzle</span><span class="tag">RPG</span><span class="tag">Unity</span></div></article>
+    <article class="project"><span class="num">06</span><h3>Traffic Jam Cars Puzzle</h3><p>Developer and team manager. Worked on visual effects, data analysis and game marketing.</p><div class="tags"><span class="tag">Puzzle</span><span class="tag">VFX</span><span class="tag">Analytics</span></div></article>
+    <article class="project"><span class="num">07</span><h3>Football Puzzle Champions</h3><p>Developer maintaining game features.</p><div class="tags"><span class="tag">Puzzle</span><span class="tag">Feature Dev</span></div></article>
+    <article class="project"><span class="num">08</span><h3>Match &amp; Score</h3><p>Developer maintaining game features.</p><div class="tags"><span class="tag">Game Dev</span><span class="tag">Maintenance</span></div></article>
+    <article class="project"><span class="num">09</span><h3>Hunter Age</h3><p>Developer focused on character visual effects and sound effects.</p><div class="tags"><span class="tag">VFX</span><span class="tag">SFX</span></div></article>
+    <article class="project"><span class="num">10</span><h3>Riot Road Highway</h3><p>Highlighted project from the early game-development stage.</p><div class="tags"><span class="tag">Game Dev</span><span class="tag">Unity</span></div></article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="eyebrow">// tech_stack</div><h2>Technical skills</h2>
+  <div class="skills">
+    <div class="skill"><h3>GAME DEVELOPMENT</h3><p>Game systems · Feature development · Feature maintenance · Puzzle games · RPG · Strategy</p></div>
+    <div class="skill"><h3>ENGINE / TOOLS</h3><p>Unity · Game development workflow · WebGL · Windows · macOS · Steam</p></div>
+    <div class="skill"><h3>ANALYTICAL</h3><p>Data analysis · Problem solving · Debugging · Continuous technology research</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="eyebrow">// contact.init()</div><h2>Let's build a game.</h2>
+  <div class="contact">
+    <div class="contact-card"><small>EMAIL</small><a href="mailto:chaunhatlong12t@gmail.com">chaunhatlong12t@gmail.com</a></div>
+    <div class="contact-card"><small>PHONE</small><a href="tel:+84984828922">+84 984 828 922</a></div>
+    <div class="contact-card"><small>LOCATION</small><b>Danang, Vietnam</b></div>
+    <div class="contact-card"><small>CV</small><a href="Chau-Nhat-Long-CV.pdf" download>Download PDF →</a></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="wrap"><span>© Chau Nhat Long</span><span>Built for Unity / Game Development</span></footer>
+</body>
+</html>
